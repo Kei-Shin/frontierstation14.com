@@ -11,6 +11,8 @@ const buttonVariants = tv({
 			secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
 			ghost: "hover:bg-accent hover:text-accent-foreground",
 			link: "text-primary underline-offset-4 hover:underline",
+			spacebutton: "bg-primary text-primary-foreground hover:bg-primary/75 clip-spessbtn w-32 font-bold",
+			spacetab: "bg-accent text-primary-foreground hover:bg-accent/75 rounded-none clip-spesstab w-24 text-wrap font-bold"
 		},
 		size: {
 			default: "h-10 px-4 py-2",
