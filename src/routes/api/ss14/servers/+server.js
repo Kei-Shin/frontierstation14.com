@@ -1,64 +1,55 @@
-import 'dotenv/config';
+import config  from "$lib/config.js"
 
 export const GET = async () => {
-    let servers = 
-    [
-        {
-            address: 'http://167.235.179.74:1212/status',
-            last_ping: '',
-            name: 'Maunder Sector',
-            region: 'EU West 1',
-            status: false,
-            players: '??',
-            soft_max_players: '??',
-            panic_bunker: true,
-            round_start_time: '',
-            timeDiff: ''
-        },
-        {
-            address: 'http://144.48.104.34:1212/status',
-            last_ping: '',
-            name: 'Hypatia Sector',
-            region: 'US East 1',
-            status: false,
-            players: '??',
-            soft_max_players: '??',
-            panic_bunker: false,
-            round_start_time: '',
-            timeDiff: ''
-        }
-    ]    
 
-    let maunder, hypatia, maunderData, hypatiaData;
-    try {
-        maunder = await fetch("http://167.235.179.74:1212/status");
-        if (!maunder.ok) {
-            throw new Error
+    /**
+     * @param {string | URL | Request} address
+     */
+    async function fetchServerStatus(address) {
+        try {
+            const res = await fetch(address)
+            if (!res.ok) { throw new Error}
+            const data = await res.json()
+            return {
+                status: true,
+                players: data.players || "??",
+                soft_max_players: data.soft_max_players || "??",
+                round_start_time: data.round_start_time || '',
+            }
+        } 
+        catch {
+            return {
+                status: false,
+                players: "??",
+                soft_max_players: "??",
+                round_start_time: '',
+            }
         }
-        maunderData = await maunder.json()
-        servers[0].status = true;
-        servers[0].players = maunderData.players;
-        servers[0].soft_max_players = maunderData.soft_max_players;
-        servers[0].panic_bunker = maunderData.panic_bunker;
-        servers[0].round_start_time = maunderData.round_start_time;
     }
-    catch {
-        servers[0].status = false
-    }
-    try {
-        hypatia = await fetch("http://144.48.104.34:1212/status")
-        if (!hypatia.ok) {
-            throw new Error
+    
+    async function createServerArray() {
+        const servers = [];
+    
+        for (const server of config.ss14) {
+            const statusData = await fetchServerStatus(server.address);
+    
+            servers.push({
+                address: server.address,
+                name: server.name,
+                region: server.region,
+                status: statusData.status,
+                players: statusData.players,
+                soft_max_players: statusData.soft_max_players,
+                panic_bunker: false,
+                round_start_time: statusData.round_start_time,
+                timeDiff: '' //Leave blank, client can parse this how they want.
+            });
         }
-        hypatiaData = await hypatia.json()
-        servers[1].status = true;
-        servers[1].players = hypatiaData.players;
-        servers[1].soft_max_players = hypatiaData.soft_max_players;
-        servers[1].panic_bunker = hypatiaData.panic_bunker;
-        servers[1].round_start_time = hypatiaData.round_start_time;
+    
+        return servers;
     }
-    catch {
-        servers[1].status = false
-    }
-    return new Response(JSON.stringify(servers), { status: 200 })
+
+    const servers = await createServerArray();
+    return new Response(JSON.stringify(servers), { status: 200 });
+    
 }
