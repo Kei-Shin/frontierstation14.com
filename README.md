@@ -4,7 +4,7 @@ A small website written in sveltekit to serve as a directory for a certain group
 
 ## Getting Started
 
-Install [https://github.com/nvm-sh/nvm](Node Version Manager) and use the latest LTS
+Install [Node Version Manager](https://github.com/nvm-sh/nvm) and use the latest LTS
 
 ```bash
 nvm use --lts
