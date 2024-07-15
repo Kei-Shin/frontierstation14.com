@@ -10,7 +10,7 @@ Install [Node Version Manager](https://github.com/nvm-sh/nvm) and use the latest
 nvm use --lts
 ```
 
-Clone or fork the project and install dependancies using `npm install`. From there you can run the server using the one of the commands below.
+Clone or fork the project and install dependencies using `npm install`. From there you can run the server using the one of the commands below.
 
 ### Development
 
