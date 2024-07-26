@@ -58,12 +58,11 @@
         </div>
         <div class="h-full bg-background/90 rounded-lg border-[1px] border-[#343438] SECONDARY flex flex-col overflow-auto">
             <div class="p-2">
-                <div class="flex items-center gap-1">
-                    <Button variant="spacetab">Changelog?</Button>
-                    <Button variant="spacetab">Recent Rounds?</Button>
-                    <Button variant="spacetab">Rules?</Button>
+                <div class="flex justify-between">
+                    <h3 class="font-bold">Changelog</h3>
+                    <a href="{config.links.github}/commits" class="flex items-center"><i class="fa-regular fa-arrow-up-right-from-square mr-1 h-4 w-4"></i>View on Github</a>
                 </div>
-                 <Changelog></Changelog>
+                <Changelog></Changelog>
             </div>
         </div>
 
