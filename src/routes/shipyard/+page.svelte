@@ -39,7 +39,7 @@ function initPanzoom(element) {
 				<DropdownMenu.Content class="grid grid-cols-8">
 					{#each config.shipyard as shipType}
 					<div class="col-span-8">
-						<DropdownMenu.Label>{shipType.category}</DropdownMenu.Label>
+						<DropdownMenu.Label class="text-accent-foreground font-bold">{shipType.category}</DropdownMenu.Label>
 						<DropdownMenu.Separator />
 					</div>
 						{#each shipType.items as ship}
