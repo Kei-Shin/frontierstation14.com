@@ -34,7 +34,7 @@ onMount(async () => {
 });
 </script>
 
-<div class="sm:h-96 max-h-96 border-accent border-[1px] p-1 {changelog.length === 0 ? "overflow-hidden" : "overflow-auto"}">
+<div class="sm:h-96 max-h-96 border-accent border-[1px] {changelog.length === 0 ? "overflow-hidden" : "overflow-auto"}">
     {#if changelog.length === 0}
     <div class="flex items-center space-x-4">
         <div class="space-y-2 p-1">
@@ -71,9 +71,9 @@ onMount(async () => {
     </div>
     {:else}
     {#each changelog as item, index}
-        <div class="pb-4 {index % 2 === 0 ? 'bg-background' : 'bg-background/90'}">
+        <div class="p-1 pb-4 {index % 2 === 0 ? 'bg-background' : 'bg-accent/5'}">
             {#if isNewDay(item.time, changelog[index - 1]?.time) === true}
-            <h4 class="text-accent-foreground font-bold">{new Date(item.time).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</h4>
+            <h4 class="text-accent-foreground font-bold pl-1">{new Date(item.time).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</h4>
             <h4 class="font-semibold">{item.author}</h4>
             {:else}
             <h4 class="font-semibold">{item.author}</h4>
