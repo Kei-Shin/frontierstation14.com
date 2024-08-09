@@ -63,14 +63,19 @@
 							<span>Forums</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
+						<DropdownMenu.Item href="/shipyard">
+							<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+							<span>Shipyard</span>
+						</DropdownMenu.Item>
+						<DropdownMenu.Separator />
 						<DropdownMenu.Item href={config.links.wiki}>
 							<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
 							<span>Wiki</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
-						<DropdownMenu.Item href="/shipyard">
-							<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
-							<span>Shipyard</span>
+						<DropdownMenu.Item href={config.links.github}>
+							<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
+							<span>Github</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
 						<DropdownMenu.Item href={config.links.donate}>
@@ -79,7 +84,7 @@
 						</DropdownMenu.Item>
 					</DropdownMenu.Content>
 				</DropdownMenu.Root>
-				<div class="hidden lg:flex justify-center items-center px-8 gap-4">
+				<div class="hidden lg:flex justify-center items-center px-3 gap-3">
 					<Button variant="spacebutton" href={config.links.discord}>
 						<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
 						<span>Discord</span>
@@ -88,13 +93,17 @@
 						<i class="fa-solid fa-comments mr-2 h-4 w-4"></i>
 						<span>Forums</span>
 					</Button>
+					<Button variant="spacebutton" href="/shipyard">
+						<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+						<span>Shipyard</span>
+					</Button>
 					<Button variant="spacebutton" href={config.links.wiki}>
 						<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
 						<span>Wiki</span>
 					</Button>
-					<Button variant="spacebutton" href="/shipyard">
-						<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
-						<span>Shipyard</span>
+					<Button variant="spacebutton" href={config.links.github}>
+						<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
+						<span>Github</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.donate}>
 						<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
