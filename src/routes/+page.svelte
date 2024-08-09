@@ -51,19 +51,20 @@
                     <h1 class="flex justify-center">Welcome to Frontier Station 14</h1>
                     <p>Frontier Station is a unique twist on the traditional Space Station gameplay. On Frontier, everyone can be the captain of their own ship to venture forth and explore space beyond the station! Salvage, mine, research, trade, explore, or pirate your way to riches on the vast Frontier! Our unique game design turns regular station play on its head, instead relying heavily on procedural generated worlds and environments, and allowing more emergent forms of gameplay and RP to develop outside of traditional Space Station type of play.</p>
                     <p>Due to the nature of our game style, many aspects of the underlying game have been modified to provide a better overall experience on the Frontier. Expeditions are hand tailored to allow a more relaxing and less stressful experience, many game systems have been slowed down and had their balance tweaked to allow for a more semi-persistent type game world.</p>
-                    <p class="flex justify-center pt-2">For more info&nbsp;<a href={config.links.wiki}>check out the wiki</a>&nbsp;or jump in game and found out for yourself.</p>
+                    <div class="flex justify-center pt-2">
+                        <p>For more info&nbsp;<a href={config.links.wiki}>check out the wiki</a>&nbsp;or jump in game and found out for yourself.</p>
+                    </div>
                 </div>
             </div>
 
         </div>
         <div class="h-full bg-background/90 rounded-lg border-[1px] border-[#343438] SECONDARY flex flex-col overflow-auto">
             <div class="p-2">
-                <div class="flex items-center gap-1">
-                    <Button variant="spacetab">Changelog?</Button>
-                    <Button variant="spacetab">Recent Rounds?</Button>
-                    <Button variant="spacetab">Rules?</Button>
+                <div class="flex justify-between">
+                    <h3 class="font-bold">Changelog</h3>
+                    <a href="{config.links.github}/commits" class="flex items-center"><i class="fa-regular fa-arrow-up-right-from-square mr-1 h-4 w-4"></i>View on Github</a>
                 </div>
-                 <Changelog></Changelog>
+                <Changelog></Changelog>
             </div>
         </div>
 

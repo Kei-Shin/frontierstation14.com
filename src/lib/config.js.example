@@ -31,6 +31,19 @@ const config = {
     changelog: {
         repo: "https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml"
     }
+
+    //An array of objects containing a category(nsfd,default,etc) with items being an array of ships contained as objects(name,imgpath)
+    shipyard: [
+        {
+            category: "Civilian Ships",
+            items: [
+                {
+                    name: "Urist McShippingTon",
+                    imgPath: "/shipyard/McShippingTon/McShippingTon-0.webp" //Map Renderer is your friend when it works!
+                },
+            ]
+        },
+    ]
 };
 
 
