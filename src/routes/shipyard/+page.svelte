@@ -63,7 +63,7 @@ function initPanzoom(element) {
 					<ul class="list-disc w-fit mx-4">
 						<li>Pan using <span class="text-accent-foreground">Mouse1</span> or <span class="text-accent-foreground">Touch</span> Gestures</li>
 						<li>Zoom using <span class="text-accent-foreground">Scroll Wheel</span> or <span class="text-accent-foreground">Pinch</span> Gestures</li>
-						<li>Report issues to kei_shin on the <a href="{config.links.discord}">Frontier discord!</a></li>
+						<li>Report broken ships to kei_shin on the <a href="{config.links.discord}">Frontier discord!</a></li>
 					</ul>
 				</div>
 			</div>
