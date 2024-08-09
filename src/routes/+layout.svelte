@@ -43,9 +43,9 @@
 <main class="flex flex-col sm:h-screen w-full">
 	<div class="h-24 w-full px-4 pt-4">
 		<div class="h-full bg-background/90 rounded-lg border-[1px] border-[#343438]">
-			<div class="h-full flex justify-between items-center">
-				<a class="flex" href="/"><img class="p-4" src="/frontierstation_logo.webp" alt="Frontier Station Logo"></a>
-				<div class="lg:hidden">
+			<div class="h-full flex justify-between">
+				<a class="flex max-h-24" href="/"><img class="p-4" src="/frontierstation_logo.webp" alt="Frontier Station Logo"></a>
+				<div class="flex items-center lg:hidden">
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger >
 							<Button variant="spacebutton" class="mx-8">
