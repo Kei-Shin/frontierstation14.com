@@ -10,7 +10,7 @@ import config  from "$lib/config.js"
 let selectedShip;
 
 /**
- * @type {import("panzoom").PanZoom}
+ * @type {import("panzoom").PanZoom | null}
  */
 let instance;
 
@@ -18,6 +18,7 @@ let instance;
  * @param {HTMLElement} element
  */
 function initPanzoom(element) {
+	instance = null;
 	instance = panzoom(element, {
 		maxZoom: 3.5,
 		initialZoom: 1,
@@ -51,9 +52,9 @@ function initPanzoom(element) {
 	</div>
 
 	<div class="h-full w-full flex items-center justify-center">
-		<div class="" use:initPanzoom>
-			<img class="" src="{selectedShip ? selectedShip : null}" alt="" >	
-		</div>
+		{#key selectedShip}
+			<img class="" src={selectedShip} use:initPanzoom alt="">
+		{/key}
 	</div>
 </main>
 
