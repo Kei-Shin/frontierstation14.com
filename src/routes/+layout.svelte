@@ -44,7 +44,7 @@
 	<div class="h-24 w-full px-4 pt-4">
 		<div class="h-full bg-background/90 rounded-lg border-[1px] border-[#343438]">
 			<div class="h-full flex justify-between">
-				<img class="p-4" src="/frontierstation_logo.webp" alt="Frontier Station Logo">
+				<a class="flex" href="/"><img class="p-4" src="/frontierstation_logo.webp" alt="Frontier Station Logo"></a>
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger class="lg:hidden">
 						<Button variant="spacebutton" class="mx-8">
@@ -68,9 +68,9 @@
 							<span>Wiki</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
-						<DropdownMenu.Item href={config.links.github}>
-							<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
-							<span>Github</span>
+						<DropdownMenu.Item href="/shipyard">
+							<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+							<span>Shipyard</span>
 						</DropdownMenu.Item>
 						<DropdownMenu.Separator />
 						<DropdownMenu.Item href={config.links.donate}>
@@ -92,9 +92,9 @@
 						<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
 						<span>Wiki</span>
 					</Button>
-					<Button variant="spacebutton" href={config.links.github}>
-						<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
-						<span>Github</span>
+					<Button variant="spacebutton" href="/shipyard">
+						<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+						<span>Shipyard</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.donate}>
 						<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
