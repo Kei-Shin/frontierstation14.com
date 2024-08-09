@@ -43,47 +43,49 @@
 <main class="flex flex-col sm:h-screen w-full">
 	<div class="h-24 w-full px-4 pt-4">
 		<div class="h-full bg-background/90 rounded-lg border-[1px] border-[#343438]">
-			<div class="h-full flex justify-between">
+			<div class="h-full flex justify-between items-center">
 				<a class="flex" href="/"><img class="p-4" src="/frontierstation_logo.webp" alt="Frontier Station Logo"></a>
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger class="lg:hidden">
-						<Button variant="spacebutton" class="mx-8">
-							<i class="fa-solid fa-chevron-down mr-2 h-4 w-4"></i>
-							<span>Menu</span>
-						</Button>
-					</DropdownMenu.Trigger>
-					<DropdownMenu.Content>
-						<DropdownMenu.Item href={config.links.discord}>
-							<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
-							<span>Discord</span>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Item href={config.links.forums}>
-							<i class="fa-solid fa-comments mr-2 h-4 w-4"></i>
-							<span>Forums</span>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Item href="/shipyard">
-							<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
-							<span>Shipyard</span>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Item href={config.links.wiki}>
-							<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
-							<span>Wiki</span>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Item href={config.links.github}>
-							<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
-							<span>Github</span>
-						</DropdownMenu.Item>
-						<DropdownMenu.Separator />
-						<DropdownMenu.Item href={config.links.donate}>
-							<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
-							<span>Donate</span>
-						</DropdownMenu.Item>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
+				<div class="lg:hidden">
+					<DropdownMenu.Root>
+						<DropdownMenu.Trigger >
+							<Button variant="spacebutton" class="mx-8">
+								<i class="fa-solid fa-chevron-down mr-2 h-4 w-4"></i>
+								<span>Menu</span>
+							</Button>
+						</DropdownMenu.Trigger>
+						<DropdownMenu.Content>
+							<DropdownMenu.Item href={config.links.discord}>
+								<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
+								<span>Discord</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href={config.links.forums}>
+								<i class="fa-solid fa-comments mr-2 h-4 w-4"></i>
+								<span>Forums</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href="/shipyard">
+								<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+								<span>Shipyard</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href={config.links.wiki}>
+								<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
+								<span>Wiki</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href={config.links.github}>
+								<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
+								<span>Github</span>
+							</DropdownMenu.Item>
+							<DropdownMenu.Separator />
+							<DropdownMenu.Item href={config.links.donate}>
+								<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
+								<span>Donate</span>
+							</DropdownMenu.Item>
+						</DropdownMenu.Content>
+					</DropdownMenu.Root>
+				</div>
 				<div class="hidden lg:flex justify-center items-center px-3 gap-3">
 					<Button variant="spacebutton" href={config.links.discord}>
 						<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
