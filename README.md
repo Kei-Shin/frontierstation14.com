@@ -10,7 +10,11 @@ Install [Node Version Manager](https://github.com/nvm-sh/nvm) and use the latest
 nvm use --lts
 ```
 
-Clone or fork the project and install dependencies using `npm install`. From there you can run the server using the one of the commands below.
+Clone or fork the project and install dependencies using `npm install`.
+
+Visit the lib folder and create your config.js.
+
+From there you can run the server using the one of the commands below.
 
 ### Development
 
@@ -28,9 +32,12 @@ npm run dev -- --host
 ```bash
 # Run the build step
 npm run build
-# Then preview runs your production server 
+# Then preview runs your production server
 npm run preview
+# Alternatively will do both for you
+npm run prod
 ```
+
 ## License
 
 Content unless otherwise stated is licensed under the GNU Affero General Public License version 3.0.
