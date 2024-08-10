@@ -9,5 +9,5 @@ export {
 	//
 	Root as Tooltip,
 	Content as TooltipContent,
-	Trigger as TooltipTrigger,
+	Trigger as TooltipTrigger
 };
