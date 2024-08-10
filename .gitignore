@@ -26,3 +26,5 @@ package-lock.json
 #frontierstation14.com
 config.js
 static/shipyard/*
+!static/shipyard
+

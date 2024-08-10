@@ -6,10 +6,7 @@ export function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
 
-export const flyAndScale = (
-	node,
-	params = { y: -8, x: 0, start: 0.95, duration: 150 }
-) => {
+export const flyAndScale = (node, params = { y: -8, x: 0, start: 0.95, duration: 150 }) => {
 	const style = getComputedStyle(node);
 	const transform = style.transform === "none" ? "" : style.transform;
 

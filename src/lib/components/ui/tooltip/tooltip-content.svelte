@@ -6,7 +6,7 @@
 	export let transition = flyAndScale;
 	export let transitionConfig = {
 		y: 8,
-		duration: 150,
+		duration: 150
 	};
 	export { className as class };
 </script>

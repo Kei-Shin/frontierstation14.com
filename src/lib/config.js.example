@@ -12,8 +12,12 @@ const config = {
         donate: "/",
     },
 
-    //Space Station 14 server(s) to check. Must be an array containing the address to the server's status page as well as the desired name and region.
+    //Takes in the direct url to a changelog.yml. (Ex: https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml)
+    changelog: {
+        repo: "https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml"
+    }
 
+    //Space Station 14 server(s) to check. Must be an array containing the address to the server's status page as well as the desired name and region.
     ss14: [
         {
             address: 'http://ip:port/status',
@@ -26,12 +30,7 @@ const config = {
             region: 'US East 1',
         }
     ],
-
-    //Takes in the direct url to a changelog.yml. (Ex: https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml)
-    changelog: {
-        repo: "https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml"
-    }
-
+    
     //An array of objects containing a category(nsfd,default,etc) with items being an array of ships contained as objects(name,imgpath)
     shipyard: [
         {

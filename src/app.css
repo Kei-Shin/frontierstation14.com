@@ -1,88 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: 120 2.6% 14.9%;
-    --foreground: 0 0% 96.1%;
- 
-    --muted: 120 2.08% 18.82%;
-    --muted-foreground: 240 5.3% 11.2%;
- 
-    --popover: 120 2.6% 14.9%;
-    --popover-foreground: 0 0% 96.1%;;
- 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    
-    --primary: 120 3.4% 28.4%;
-    --primary-foreground: 0 0% 96.1%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --accent: 36.5 9.8% 51.4%;
-    --accent-foreground: 36.5 29.8% 51.4%;
- 
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
-  }
+	:root {
+		--background: 120 2.6% 14.9%;
+		--foreground: 0 0% 96.1%;
+
+		--muted: 120 2.08% 18.82%;
+		--muted-foreground: 240 5.3% 11.2%;
+
+		--popover: 120 2.6% 14.9%;
+		--popover-foreground: 0 0% 96.1%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+
+		--primary: 120 3.4% 28.4%;
+		--primary-foreground: 0 0% 96.1%;
+
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+
+		--accent: 36.5 9.8% 51.4%;
+		--accent-foreground: 36.5 29.8% 51.4%;
+
+		--destructive: 0 72.2% 50.6%;
+		--destructive-foreground: 210 40% 98%;
+
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+	}
 }
- 
+
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
 }
-.clip-spessbtn { 
-  clip-path: polygon(0% 0%, 90% 0%, 100% 25%, 100% 100%, 10% 100%, 0% 75%);
+.clip-spessbtn {
+	clip-path: polygon(0% 0%, 90% 0%, 100% 25%, 100% 100%, 10% 100%, 0% 75%);
 }
 .clip-spesstab {
-  clip-path: polygon(90% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 0%);
+	clip-path: polygon(90% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 0%);
 }
 .fa-bug-slash {
-  --fa-primary-color: rgb(220 38 38);
-  --fa-secondary-color: rgb(101 163 13) ;
-  --fa-secondary-opacity: 1;
+	--fa-primary-color: rgb(220 38 38);
+	--fa-secondary-color: rgb(101 163 13);
+	--fa-secondary-opacity: 1;
 }
-h1, h2, h3, h4, h5, p {
-  @apply pb-2
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	@apply pb-2;
 }
-h1, h2, h3 {
-  @apply text-accent-foreground;
+h1,
+h2,
+h3 {
+	@apply text-accent-foreground;
 }
-h1, h2 {
- @apply font-bold;
+h1,
+h2 {
+	@apply font-bold;
 }
 h1 {
-  @apply text-3xl;
+	@apply text-3xl;
 }
 h2 {
-  @apply text-2xl;
+	@apply text-2xl;
 }
 h3 {
-  @apply text-2xl;
+	@apply text-2xl;
 }
 h4 {
-  @apply text-xl;
+	@apply text-xl;
 }
 h5 {
-  @apply text-lg;
+	@apply text-lg;
 }
-p, span {
-  @apply text-base;
+p,
+span {
+	@apply text-base;
 }
 a {
-  @apply text-[#5C89D9]
+	@apply text-[#5C89D9];
 }
