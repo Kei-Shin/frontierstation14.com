@@ -27,3 +27,4 @@ package-lock.json
 config.js
 static/shipyard/*
 !static/shipyard
+

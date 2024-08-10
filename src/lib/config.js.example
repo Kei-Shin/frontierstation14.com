@@ -30,10 +30,7 @@ const config = {
             region: 'US East 1',
         }
     ],
-
-    //Directory of your SS14 Repo in which map renders will be executed from.
-    repo: "",
-
+    
     //An array of objects containing a category(nsfd,default,etc) with items being an array of ships contained as objects(name,imgpath)
     shipyard: [
         {
