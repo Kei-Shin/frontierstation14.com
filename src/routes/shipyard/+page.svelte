@@ -25,6 +25,58 @@
 			transformOrigin: { x: 0.5, y: 0.5 }
 		});
 	}
+	/** @type {import('./$types').PageData} */
+	export let data;
+
+	let shipList = [];
+	let inputShip = "";
+	let categorizedShips = {};
+	const mappingFlavorText = {
+		"Civilian Vessels": "This civilian vessel is valued at ",
+		"Expedition Vessels": "This expedition ready vessel is valued at ",
+		"Scrapyard Vessels": "This technically flyable vessel is valued at",
+		"Frontier Outpost Vessels": "This outpost staff exclusive vessel is valued at ",
+		"NFSD Fleet": "This vessel is a part of the NFSD fleet and is valued at ",
+		"Pirate Fleet": "This vessel commonly found on black markets favored by pirates is valued at ",
+		"Syndicate Vessels": "This is a known vessel used by the Syndicate and is valued at "
+	};
+
+	(async () => {
+		try {
+			shipList = await data.post.shipList;
+
+			const mapping = {
+				Shipyard: "Civilian Vessels",
+				Expedition: "Expedition Vessels",
+				Scrap: "Scrapyard Vessels",
+				Sr: "Frontier Outpost Vessels",
+				Nfsd: "NFSD Fleet",
+				BlackMarket: "Pirate Fleet",
+				Syndicate: "Syndicate Vessels"
+			};
+
+			shipList.forEach((/** @type {{ category: string | number; }} */ ship) => {
+				ship.category = mapping[ship.category] || ship.category;
+			});
+
+			shipList.sort((a, b) => {
+				if (a.category < b.category) return -1;
+				if (a.category > b.category) return 1;
+				if (a.name < b.name) return -1;
+				if (a.name > b.name) return 1;
+				return 0;
+			});
+
+			shipList.forEach((ship) => {
+				if (!categorizedShips[ship.category]) {
+					categorizedShips[ship.category] = [];
+				}
+				categorizedShips[ship.category].push(ship);
+			});
+		} catch (error) {
+			console.error("Failed to fetch ship list:", error);
+		}
+	})();
 </script>
 
 <main class="flex h-screen w-screen flex-col overflow-hidden">
@@ -39,31 +91,36 @@
 						<span>Select Ship</span>
 					</Button>
 				</DropdownMenu.Trigger>
-				<DropdownMenu.Content class="grid h-96 grid-cols-3 gap-x-8 overflow-auto">
-					{#each config.shipyard as shipType}
-						<div class="col-span-3">
-							<DropdownMenu.Label class="overflow-scroll font-bold text-accent-foreground"
-								>{shipType.category}</DropdownMenu.Label
-							>
-							<DropdownMenu.Separator />
-						</div>
-						{#each shipType.items as ship}
-							<DropdownMenu.Item
-								class="p-1"
-								on:click={() => (selectedShip = ship.imgPath)}
-								value={ship.imgPath}>{ship.name}</DropdownMenu.Item
-							>
+				<DropdownMenu.Content class="h-96 overflow-auto">
+					<div class="grid grid-cols-3 gap-x-8">
+						{#each Object.entries(categorizedShips) as [category, ships]}
+							<div class="col-span-3">
+								<DropdownMenu.Label class="font-bold text-accent-foreground">
+									{category}
+								</DropdownMenu.Label>
+								<DropdownMenu.Separator />
+							</div>
+							{#each ships as ship}
+								<DropdownMenu.Item class="p-1" on:click={() => (selectedShip = ship)} value={ship}
+									>{ship.name}</DropdownMenu.Item
+								>
+							{/each}
 						{/each}
-					{/each}
+					</div>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		</div>
 	</div>
 
 	<div class="flex h-full w-full items-center justify-center">
-		{#key selectedShip}
-			<img class="" src={selectedShip} use:initPanzoom alt="" />
-		{/key}
+		{#if selectedShip}
+			<img
+				class=""
+				src={`/shipyard/${selectedShip.id}/${selectedShip.id}-0.webp`}
+				use:initPanzoom
+				alt=""
+			/>
+		{/if}
 		{#if !selectedShip}
 			<div class="z-10 m-4 rounded-lg border-[1px] border-[#343438] bg-background/90 p-2">
 				<div class="flex flex-col items-center justify-center">
@@ -78,8 +135,9 @@
 							Zoom using <span class="text-accent-foreground">Scroll Wheel</span> or
 							<span class="text-accent-foreground">Pinch</span> Gestures
 						</li>
+						<li>Updated ships can take up to 24 hours to be reflected on the Shipyard.</li>
 						<li>
-							Report broken ships to kei_shin on the <a href={config.links.discord}
+							Report any issues to kei_shin on the <a href={config.links.discord}
 								>Frontier discord!</a
 							>
 						</li>
@@ -88,4 +146,15 @@
 			</div>
 		{/if}
 	</div>
+	{#if selectedShip}
+		<div
+			class="absolute bottom-0 z-10 m-4 w-fit max-w-xl rounded-lg border-[1px] border-[#343438] bg-background/90 p-2"
+		>
+			<h2 class="text-xl">{selectedShip.prefix} {selectedShip.name}</h2>
+			<p>
+				{selectedShip.description}
+				{mappingFlavorText[selectedShip.category]}{selectedShip.price} Spesos
+			</p>
+		</div>
+	{/if}
 </main>
