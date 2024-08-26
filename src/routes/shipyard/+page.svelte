@@ -4,10 +4,14 @@
 	import { Button } from "$lib/components/ui/button";
 	import config from "$lib/config.js";
 
-	/**
-	 * @type {string | null | undefined}
-	 */
-	let selectedShip;
+	let selectedShip = {
+		id: '',
+		name: '',
+		prefix: '',
+		description: '',
+		price: 0,
+		category: ''
+	};
 
 	/**
 	 * @type {import("panzoom").PanZoom | null}
@@ -78,6 +82,13 @@
 		}
 	})();
 </script>
+<svelte:head>
+	<title>{selectedShip.name ? `${selectedShip.prefix} ${selectedShip.name} - Shipyard - Frontier Station`: 'Shipyard - Frontier Station'}</title>
+	<meta name="description" content="todo" />
+	<meta name="robots" content="index, follow" />
+	<meta name="darkreader-lock" />
+	<!-- Breaks the background when enabled so don't.-->
+</svelte:head>
 
 <main class="flex h-screen w-screen flex-col overflow-hidden">
 	<div
@@ -113,7 +124,7 @@
 	</div>
 
 	<div class="flex h-full w-full items-center justify-center">
-		{#if selectedShip}
+		{#if selectedShip.id}
 			<img
 				class=""
 				src={`/shipyard/${selectedShip.id}/${selectedShip.id}-0.webp`}
@@ -121,7 +132,7 @@
 				alt=""
 			/>
 		{/if}
-		{#if !selectedShip}
+		{#if !selectedShip.id}
 			<div class="z-10 m-4 rounded-lg border-[1px] border-[#343438] bg-background/90 p-2">
 				<div class="flex flex-col items-center justify-center">
 					<h2>Welcome to the Shipyard</h2>
@@ -146,7 +157,7 @@
 			</div>
 		{/if}
 	</div>
-	{#if selectedShip}
+	{#if selectedShip.id}
 		<div
 			class="absolute bottom-0 z-10 m-4 w-fit max-w-xl rounded-lg border-[1px] border-[#343438] bg-background/90 p-2"
 		>
