@@ -35,15 +35,6 @@
 	let shipList = [];
 	let inputShip = "";
 	let categorizedShips = {};
-	const mappingFlavorText = {
-		"Civilian Vessels": "This civilian vessel is valued at ",
-		"Expedition Vessels": "This expedition ready vessel is valued at ",
-		"Scrapyard Vessels": "This technically flyable vessel is valued at",
-		"Frontier Outpost Vessels": "This outpost staff exclusive vessel is valued at ",
-		"NFSD Fleet": "This vessel is a part of the NFSD fleet and is valued at ",
-		"Pirate Fleet": "This vessel commonly found on black markets favored by pirates is valued at ",
-		"Syndicate Vessels": "This is a known vessel used by the Syndicate and is valued at "
-	};
 
 	(async () => {
 		try {
@@ -159,12 +150,14 @@
 	</div>
 	{#if selectedShip.id}
 		<div
-			class="absolute bottom-0 z-10 m-4 w-fit max-w-xl rounded-lg border-[1px] border-[#343438] bg-background/90 p-2"
+			class="absolute bottom-0 z-10 m-4 w-fit max-w-xl rounded-lg border-[1px] border-[#343438] bg-background/90 px-2 py-1"
 		>
 			<h2 class="text-xl">{selectedShip.prefix} {selectedShip.name}</h2>
 			<p>
 				{selectedShip.description}
-				{mappingFlavorText[selectedShip.category]}{selectedShip.price} Spesos
+			</p>
+			<p class="text-foreground/40 text-xs">
+				This vessel is valued at {selectedShip.price} Spesos
 			</p>
 		</div>
 	{/if}
