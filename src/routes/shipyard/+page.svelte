@@ -104,7 +104,7 @@
 						<span>Select Ship</span>
 					</Button>
 				</DropdownMenu.Trigger>
-				<DropdownMenu.Content class="h-96 overflow-hidden">
+				<DropdownMenu.Content>
 					<ScrollArea class="h-96">
 						<div class="grid grid-cols-3 gap-x-8 pb-4">
 							{#each Object.entries(categorizedShips) as [category, ships]}
