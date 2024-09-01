@@ -1,4 +1,4 @@
-export async function load({ fetch, params }) {
+export async function load({ fetch, url, params }) {
 	async function getEnabledShips() {
 		try {
 			const response = await fetch("shipyard/enabledShips.json");
@@ -12,9 +12,11 @@ export async function load({ fetch, params }) {
 		}
 	}
 	let shipList = getEnabledShips();
+	const id = url.searchParams.get('id');
 	return {
 		post: {
-			shipList: shipList
+			shipList: shipList,
+			id: id
 		}
 	};
 }
