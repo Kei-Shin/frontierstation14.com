@@ -4,6 +4,7 @@
 	import yaml from "js-yaml";
 	import config from "$lib/config.js";
 	import { Skeleton } from "$lib/components/ui/skeleton/index.js";
+	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 
 	const clClassMap = {
 		Add: "w-6 fa-solid fa-plus text-green-600",
@@ -32,12 +33,7 @@
 		getChangelog();
 	});
 </script>
-
-<div
-	class="max-h-96 border-[1px] border-accent sm:h-96 {changelog.length === 0
-		? 'overflow-hidden'
-		: 'overflow-auto'}"
->
+<div class="max-h-96 border-[1px] border-accent h-96 overflow-hidden">
 	{#if changelog.length === 0}
 		<div class="flex items-center space-x-4">
 			<div class="space-y-2 p-1">
@@ -73,6 +69,7 @@
 			</div>
 		</div>
 	{:else}
+	<ScrollArea class="w-full h-full">
 		{#each changelog as item, index}
 			<div class="p-1 pb-4 {index % 2 === 0 ? 'bg-background' : 'bg-accent/5'}">
 				{#if isNewDay(item.time, changelog[index - 1]?.time) === true}
@@ -96,5 +93,7 @@
 				{/each}
 			</div>
 		{/each}
+	</ScrollArea>
 	{/if}
 </div>
+

@@ -24,7 +24,7 @@
 		>
 	</div>
 	<div
-		class="PRIMARY flex h-full flex-col overflow-auto rounded-lg border-[1px] border-[#343438] bg-background/90"
+		class="PRIMARY flex h-96 lg:h-full flex-col overflow-auto rounded-lg border-[1px] border-[#343438] bg-background/90"
 	>
 		<div class="flex flex-col items-center p-4">
 			<div>
