@@ -4,6 +4,7 @@
 	import panzoom from "panzoom";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	import { Button } from "$lib/components/ui/button";
+	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import config from "$lib/config.js";
 	import { goto, replaceState } from "$app/navigation";
 
@@ -103,22 +104,24 @@
 						<span>Select Ship</span>
 					</Button>
 				</DropdownMenu.Trigger>
-				<DropdownMenu.Content class="h-96 overflow-auto">
-					<div class="grid grid-cols-3 gap-x-8">
-						{#each Object.entries(categorizedShips) as [category, ships]}
-							<div class="col-span-3">
-								<DropdownMenu.Label class="font-bold text-accent-foreground">
-									{category}
-								</DropdownMenu.Label>
-								<DropdownMenu.Separator />
-							</div>
-							{#each ships as ship}
-								<DropdownMenu.Item class="p-1" on:click={() => (selectedShip = ship, goto(`/shipyard?id=${ship.id}`, {replaceState: true}))} value={ship}
-									>{ship.name}</DropdownMenu.Item
-								>
+				<DropdownMenu.Content class="h-96 overflow-hidden">
+					<ScrollArea class="h-96">
+						<div class="grid grid-cols-3 gap-x-8 pb-4">
+							{#each Object.entries(categorizedShips) as [category, ships]}
+								<div class="col-span-3">
+									<DropdownMenu.Label class="font-bold text-accent-foreground">
+										{category}
+									</DropdownMenu.Label>
+									<DropdownMenu.Separator />
+								</div>
+								{#each ships as ship}
+									<DropdownMenu.Item class="p-1" on:click={() => (selectedShip = ship, goto(`/shipyard?id=${ship.id}`, {replaceState: true}))} value={ship}
+										>{ship.name}</DropdownMenu.Item
+									>
+								{/each}
 							{/each}
-						{/each}
-					</div>
+						</div>
+					</ScrollArea>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		</div>
