@@ -1,8 +1,11 @@
 <script>
+	// @ts-nocheck
+	// If this file gets much more bigger then I'll redo the file structure and then do type defs
 	import panzoom from "panzoom";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	import { Button } from "$lib/components/ui/button";
 	import config from "$lib/config.js";
+	import { goto, replaceState } from "$app/navigation";
 
 	let selectedShip = {
 		id: '',
@@ -71,6 +74,13 @@
 		} catch (error) {
 			console.error("Failed to fetch ship list:", error);
 		}
+		if (data.post.id) {
+			let output = shipList.find(ship => ship.id === data.post.id)
+			if (output){
+				selectedShip = output;
+			}
+		}
+
 	})();
 </script>
 <svelte:head>
@@ -103,7 +113,7 @@
 								<DropdownMenu.Separator />
 							</div>
 							{#each ships as ship}
-								<DropdownMenu.Item class="p-1" on:click={() => (selectedShip = ship)} value={ship}
+								<DropdownMenu.Item class="p-1" on:click={() => (selectedShip = ship, goto(`/shipyard?id=${ship.id}`, {replaceState: true}))} value={ship}
 									>{ship.name}</DropdownMenu.Item
 								>
 							{/each}
