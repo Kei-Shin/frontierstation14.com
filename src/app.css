@@ -51,11 +51,6 @@
 .clip-spesstab {
 	clip-path: polygon(90% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 0%);
 }
-.fa-bug-slash {
-	--fa-primary-color: rgb(220 38 38);
-	--fa-secondary-color: rgb(101 163 13);
-	--fa-secondary-opacity: 1;
-}
 h1,
 h2,
 h3,
