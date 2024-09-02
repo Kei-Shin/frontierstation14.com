@@ -1,10 +1,5 @@
 <script>
 	import "../app.css";
-	import "$lib/fontawesome/brands.min.js";
-	import "$lib/fontawesome/solid.min.js";
-	import "$lib/fontawesome/regular.min.js";
-	import "$lib/fontawesome/duotone.min.js";
-	import "$lib/fontawesome/fontawesome.min.js";
 	import config from "$lib/config.js";
 	import { Button } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
@@ -21,38 +16,38 @@
 					<DropdownMenu.Root>
 						<DropdownMenu.Trigger>
 							<Button variant="spacebutton" class="mx-8">
-								<i class="fa-solid fa-chevron-down mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-chevron_down mr-2"></i>
 								<span>Menu</span>
 							</Button>
 						</DropdownMenu.Trigger>
 						<DropdownMenu.Content>
 							<DropdownMenu.Item href={config.links.discord}>
-								<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-discord mr-2"></i>
 								<span>Discord</span>
 							</DropdownMenu.Item>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item href={config.links.forums}>
-								<i class="fa-solid fa-comments mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-comments mr-2"></i>
 								<span>Forums</span>
 							</DropdownMenu.Item>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item href="/shipyard">
-								<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-rocket mr-2"></i>
 								<span>Shipyard</span>
 							</DropdownMenu.Item>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item href={config.links.wiki}>
-								<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
+								<i class="nf nf-md-book_information_variant mr-2"></i>
 								<span>Wiki</span>
 							</DropdownMenu.Item>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item href={config.links.github}>
-								<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-github mr-2"></i>
 								<span>Github</span>
 							</DropdownMenu.Item>
 							<DropdownMenu.Separator />
 							<DropdownMenu.Item href={config.links.donate}>
-								<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
+								<i class="nf nf-fa-dollar mr-2"></i>
 								<span>Donate</span>
 							</DropdownMenu.Item>
 						</DropdownMenu.Content>
@@ -60,27 +55,27 @@
 				</div>
 				<div class="hidden items-center justify-center gap-3 px-3 lg:flex">
 					<Button variant="spacebutton" href={config.links.discord}>
-						<i class="fa-brands fa-discord mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-discord mr-2"></i>
 						<span>Discord</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.forums}>
-						<i class="fa-solid fa-comments mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-comments mr-2"></i>
 						<span>Forums</span>
 					</Button>
 					<Button variant="spacebutton" href="/shipyard">
-						<i class="fa-solid fa-rocket-launch mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-rocket mr-2"></i>
 						<span>Shipyard</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.wiki}>
-						<i class="fa-solid fa-book-blank mr-2 h-4 w-4"></i>
+						<i class="nf nf-md-book_information_variant mr-2"></i>
 						<span>Wiki</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.github}>
-						<i class="fa-brands fa-github mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-github mr-2"></i>
 						<span>Github</span>
 					</Button>
 					<Button variant="spacebutton" href={config.links.donate}>
-						<i class="fa-solid fa-dollar-sign mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-dollar mr-2"></i>
 						<span>Donate</span>
 					</Button>
 				</div>

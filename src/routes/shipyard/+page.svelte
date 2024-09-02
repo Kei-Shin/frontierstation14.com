@@ -100,7 +100,7 @@
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
 					<Button variant="spacebutton" class="mx-8">
-						<i class="fa-solid fa-chevron-down mr-2 h-4 w-4"></i>
+						<i class="nf nf-fa-chevron_down mr-2"></i>
 						<span>Select Ship</span>
 					</Button>
 				</DropdownMenu.Trigger>

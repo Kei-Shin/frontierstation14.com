@@ -7,10 +7,10 @@
 	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 
 	const clClassMap = {
-		Add: "w-6 fa-solid fa-plus text-green-600",
-		Remove: "w-6 fa-solid fa-minus text-red-600",
-		Tweak: "w-6 fa-solid fa-wrench text-slate-600",
-		Fix: "w-6 fa-duotone fa-bug-slash"
+		Add: "w-6 nf nf-fa-plus text-green-600",
+		Remove: "w-6 nf nf-fa-minus text-red-600",
+		Tweak: "w-6 nf nf-fa-wrench text-slate-600",
+		Fix: "w-6 nf nf-fa-bug text-lime-600"
 	};
 	function isNewDay(currentTime, previousTime) {
 		const currentDate = new Date(currentTime).toISOString().split("T")[0];

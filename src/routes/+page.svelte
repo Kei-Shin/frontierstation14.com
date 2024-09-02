@@ -60,8 +60,9 @@
 		<div class="p-2">
 			<div class="flex justify-between">
 				<h3 class="font-bold">Changelog</h3>
-				<a href="{config.links.github}pulls?q=is%3Apr+is%3Amerged" class="flex items-center"
-					><i class="fa-regular fa-arrow-up-right-from-square mr-1 h-4 w-4"></i>View on Github</a
+				<a href="{config.links.github}/pulls?q=is%3Apr+is%3Amerged" class="flex items-center"
+					><i class="nf nf-fa-arrow_up_right_from_square mr-1"></i>
+					View on Github</a
 				>
 			</div>
 			<Changelog></Changelog>
