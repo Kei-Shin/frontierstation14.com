@@ -14,8 +14,9 @@ const config = {
 
     //Takes in the direct url to a changelog.yml. (Ex: https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml)
     changelog: {
-        repo: "https://raw.githubusercontent.com/author/repo/branch/location-of-changelog/changelog.yml"
-    }
+        frontier: "https://raw.githubusercontent.com/new-frontiers-14/frontier-station-14/master/Resources/Changelog/Frontier.yml",
+        upstream: "https://raw.githubusercontent.com/new-frontiers-14/frontier-station-14/master/Resources/Changelog/Changelog.yml"
+        },
 
     //Space Station 14 server(s) to check. Must be an array containing the address to the server's status page as well as the desired name and region.
     ss14: [
@@ -30,19 +31,6 @@ const config = {
             region: 'US East 1',
         }
     ],
-    
-    //An array of objects containing a category(nsfd,default,etc) with items being an array of ships contained as objects(name,imgpath)
-    shipyard: [
-        {
-            category: "Civilian Ships",
-            items: [
-                {
-                    name: "Urist McShippingTon",
-                    imgPath: "/shipyard/McShippingTon/McShippingTon-0.webp" //Map Renderer is your friend when it works!
-                },
-            ]
-        },
-    ]
 };
 
 

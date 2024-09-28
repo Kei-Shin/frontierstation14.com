@@ -21,11 +21,12 @@
 	$: changelog;
 	async function getChangelog() {
 		try {
-			const res = await fetch(config.changelog.repo);
+			const res = await fetch(config.changelog.frontier);
 			const data = await yaml.load(await res.text());
+			console.log(await data)
 			changelog = data.Entries.slice(-50).reverse();
 		} catch (err) {
-			console.log("Changelog is likely incorrectly configure or could not be reached!");
+			console.log("Changelog is likely incorrectly configured or could not be reached!");
 			console.error(err);
 		}
 	}
